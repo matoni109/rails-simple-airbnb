@@ -1,2 +1,38 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div class="map" style="height: 40vh; background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-8 margin-top-negative">
+            <div class="card py-3 my-3" style="width: 100%;">
+                <div class="card-body ">
+                    <h2 class="card-title">
+                        <%= @flats.name %>
+                    </h2>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <%= @flats.address %>
+                    </h6>
+                </div>
+            </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h2 class="card-title">Flat Info</h2>
+                    <h6 class="card-subtitle mb-2 text-muted"></h6>
+                    <p class="card-text">
+                        <%= @flats.description %>
+                    </p>
+                    <%= link_to "Edit Flat", edit_flat_path(@flats) , class: "btn card-link" %>
+                    <%= link_to "Remove", flat_path(@flats),method: :delete, data: { confirm: "Are you sure?" }, class: "btn card-link" %>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 margin-top-negative">
+            <div class="card py-3 my-3" style="width: 100%;">
+                <div class="card-body">
+                    <h2 class="card-title">Book </h2>
+                    <h6 class="card-subtitle mb-2 text-muted"></h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
