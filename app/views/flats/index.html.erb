@@ -1,23 +1,29 @@
 <div class="container">
-    <h1>Flats#index</h1>
-    <% @flats.each do |flat| %>
-    <h4 class="mx-auto py-3">
-        <%= flat.name %>
-    </h4>
-    <ul>
-        <li>
-            Address:
-            <%= flat.address %>
-        </li>
-        <li>
-            Desc:
-            <%= flat.description %>
-        </li>
-        <li>
-            Price:
-            <%= flat.price_per_night %>
-        </li>
-    </ul>
-    <% end %>
-</div>
+    <div class="navbar-lewagon d-flex justify-content-between p-2">
+        <h4 class="my-auto">Simple Airbnb</h6>
+            <%= link_to "Add Flat", "url" , class: "btn btn-outline-primary" %>
+    </div>
+    <div class="row mx-auto justify-content-around py-5">
+        <% @flats.each do |flat| %>
+        <div class="col-4 py-1">
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="https://source.unsplash.com/random/600x300" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= flat.name %>
+                    </h5>
+                    <p class="card-text">
+                        <%= flat.address %>
+                    </p>
+                    <p class="card-text">
+                        <i class="fas fa-dollar-sign"></i>
+                        <%= flat.price_per_night %> <i class="fas fa-user-friends"></i>
+                        <%= flat.number_of_guests %>
+                    </p>
+                    <%= link_to "More Info", "url" , class: "btn btn-link" %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>
